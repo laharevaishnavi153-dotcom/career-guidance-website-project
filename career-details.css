@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    color: #333;
+}
+
+
+/* Header */
+
+header {
+    background: #0D47A1;
+    color: white;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+
+/* Hero */
+
+.details-hero {
+    background: linear-gradient(
+        rgba(13, 71, 161, 0.9),
+        rgba(21, 101, 192, 0.85)
+    );
+
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.details-hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.details-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Content */
+
+.details-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.details-card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.details-card h2 {
+    color: #0D47A1;
+    margin-bottom: 15px;
+}
+
+.details-card p {
+    line-height: 1.7;
+    color: #555;
+}
+
+.details-card ul {
+    padding-left: 25px;
+}
+
+.details-card li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+
+/* Back button */
+
+.back-button {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.back-button a {
+    display: inline-block;
+
+    background: #0D47A1;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+}
+
+.back-button a:hover {
+    background: #1565C0;
+}
+
+
+/* Footer */
+
+footer {
+    background: #0D47A1;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .details-hero h1 {
+        font-size: 30px;
+    }
+
+    .details-card {
+        padding: 22px;
+    }
+}
