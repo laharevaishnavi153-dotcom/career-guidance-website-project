@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Skills</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html" class="home-btn">← Home</a>
+
+    <section class="learn-skills-page">
+
+        <div class="section-heading">
+            <h1>Learn Skills</h1>
+            <p>
+                Develop essential skills that help you grow personally,
+                academically, and professionally.
+            </p>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <div class="skill-icon">🗣️</div>
+                <h3>Communication</h3>
+                <p>Improve speaking, listening and presentation skills.</p>
+                <button onclick="openSkill('communication')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🧠</div>
+                <h3>Critical Thinking</h3>
+                <p>Develop logical thinking and better decision-making.</p>
+                <button onclick="openSkill('critical')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">👑</div>
+                <h3>Leadership</h3>
+                <p>Build confidence and learn how to lead effectively.</p>
+                <button onclick="openSkill('leadership')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🤝</div>
+                <h3>Teamwork</h3>
+                <p>Learn collaboration, cooperation and team communication.</p>
+                <button onclick="openSkill('teamwork')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">⏰</div>
+                <h3>Time Management</h3>
+                <p>Learn to plan, prioritize and manage your time effectively.</p>
+                <button onclick="openSkill('time')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💼</div>
+                <h3>Professional Skills</h3>
+                <p>Develop resume, interview and workplace skills.</p>
+                <button onclick="openSkill('professional')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💡</div>
+                <h3>Creativity & Innovation</h3>
+                <p>Improve creative thinking and idea generation.</p>
+                <button onclick="openSkill('creativity')">Start Learning</button>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">❤️</div>
+                <h3>Personal Development</h3>
+                <p>Build confidence, adaptability and self-awareness.</p>
+                <button onclick="openSkill('personal')">Start Learning</button>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Skill Details Popup -->
+<div id="skillModal" class="skill-modal">
+
+    <div class="skill-modal-content">
+
+        <span class="close-modal" onclick="closeSkill()">×</span>
+
+        <h2 id="skillTitle"></h2>
+
+        <p id="skillDescription"></p>
+
+        <h3>What You'll Learn</h3>
+        <ul id="skillTopics"></ul>
+
+        <h3>Practice Tips</h3>
+        <ul id="skillTips"></ul>
+
+    </div>
+
+</div>
+
+<script>
+const skills = {
+
+    communication: {
+        title: "🗣️ Communication Skills",
+        description: "Learn to express your ideas clearly, confidently, and effectively.",
+        topics: [
+            "Effective speaking",
+            "Active listening",
+            "Presentation skills",
+            "Body language"
+        ],
+        tips: [
+            "Speak for 2 minutes every day on any topic",
+            "Practice introducing yourself",
+            "Try giving short presentations"
+        ]
+    },
+
+    critical: {
+        title: "🧠 Critical Thinking",
+        description: "Develop logical thinking and make better decisions.",
+        topics: [
+            "Logical reasoning",
+            "Problem solving",
+            "Decision making",
+            "Analytical thinking"
+        ],
+        tips: [
+            "Solve puzzles and reasoning questions",
+            "Question assumptions",
+            "Compare different solutions before deciding"
+        ]
+    },
+
+    leadership: {
+        title: "👑 Leadership",
+        description: "Build confidence and learn how to guide and motivate others.",
+        topics: [
+            "Decision making",
+            "Responsibility",
+            "Team motivation",
+            "Confidence"
+        ],
+        tips: [
+            "Take responsibility in group projects",
+            "Volunteer for college activities",
+            "Practice making decisions"
+        ]
+    },
+
+    teamwork: {
+        title: "🤝 Teamwork",
+        description: "Learn how to work effectively with different people.",
+        topics: [
+            "Collaboration",
+            "Team communication",
+            "Conflict resolution",
+            "Cooperation"
+        ],
+        tips: [
+            "Participate actively in group projects",
+            "Listen to your teammates",
+            "Respect different opinions"
+        ]
+    },
+
+    time: {
+        title: "⏰ Time Management",
+        description: "Learn how to organize your time and complete important tasks efficiently.",
+        topics: [
+            "Planning",
+            "Prioritization",
+            "Goal setting",
+            "Productivity"
+        ],
+        tips: [
+            "Create a daily task list",
+            "Set priorities",
+            "Avoid unnecessary distractions"
+        ]
+    },
+
+    professional: {
+        title: "💼 Professional Skills",
+        description: "Develop skills that help you become career-ready.",
+        topics: [
+            "Resume building",
+            "Interview skills",
+            "Workplace etiquette",
+            "Professional communication"
+        ],
+        tips: [
+            "Create and update your resume",
+            "Practice interview questions",
+            "Learn professional email writing"
+        ]
+    },
+
+    creativity: {
+        title: "💡 Creativity & Innovation",
+        description: "Develop creative thinking and learn how to turn ideas into solutions.",
+        topics: [
+            "Creative thinking",
+            "Idea generation",
+            "Innovation",
+            "Design thinking"
+        ],
+        tips: [
+            "Write down new ideas regularly",
+            "Try solving problems in different ways",
+            "Work on small creative projects"
+        ]
+    },
+
+    personal: {
+        title: "❤️ Personal Development",
+        description: "Improve yourself, build confidence and become more adaptable.",
+        topics: [
+            "Self-confidence",
+            "Self-awareness",
+            "Adaptability",
+            "Positive mindset"
+        ],
+        tips: [
+            "Set small personal goals",
+            "Reflect on your progress",
+            "Try something outside your comfort zone"
+        ]
+    }
+};
+
+function openSkill(skill) {
+
+    const data = skills[skill];
+
+    document.getElementById("skillTitle").textContent = data.title;
+    document.getElementById("skillDescription").textContent = data.description;
+
+    document.getElementById("skillTopics").innerHTML =
+        data.topics.map(topic => `<li>${topic}</li>`).join("");
+
+    document.getElementById("skillTips").innerHTML =
+        data.tips.map(tip => `<li>${tip}</li>`).join("");
+
+    document.getElementById("skillModal").style.display = "flex";
+}
+
+function closeSkill() {
+    document.getElementById("skillModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

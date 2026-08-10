@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Colleges</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="home-btn">← Home</a>
+
+    <section class="college-page">
+
+        <div class="section-heading">
+            <h1>Explore Colleges</h1>
+            <p>
+                Discover colleges, courses, facilities and opportunities
+                to help you make the right choice for your future.
+            </p>
+        </div>
+
+        <div class="college-container">
+
+            <div class="college-card">
+                <div class="college-icon">🏫</div>
+                <h3>Types of Colleges</h3>
+                <p>
+                    Understand different types of colleges and universities
+                    and find which one suits your goals.
+                </p>
+                <button onclick="openCollege('types')">Explore</button>
+            </div>
+
+            <div class="college-card">
+                <div class="college-icon">📚</div>
+                <h3>Courses & Programs</h3>
+                <p>
+                    Explore different courses, degrees and programs
+                    available for students.
+                </p>
+                <button onclick="openCollege('courses')">Explore</button>
+            </div>
+
+            <div class="college-card">
+                <div class="college-icon">🎯</div>
+                <h3>Choose the Right College</h3>
+                <p>
+                    Learn the important factors to consider before
+                    selecting a college.
+                </p>
+                <button onclick="openCollege('choosing')">Explore</button>
+            </div>
+
+            <div class="college-card">
+                <div class="college-icon">💰</div>
+                <h3>Fees & Scholarships</h3>
+                <p>
+                    Understand college fees and discover scholarship
+                    and financial-aid opportunities.
+                </p>
+                <button onclick="openCollege('fees')">Explore</button>
+            </div>
+
+            <div class="college-card">
+                <div class="college-icon">🏠</div>
+                <h3>Hostel & Facilities</h3>
+                <p>
+                    Learn about hostels, libraries, laboratories,
+                    sports and other campus facilities.
+                </p>
+               <button onclick="openCollege('facilities')">Explore</button>
+            </div>
+
+            <div class="college-card">
+                <div class="college-icon">📍</div>
+                <h3>Location & Accessibility</h3>
+                <p>
+                    Consider location, transportation, safety and
+                    accessibility while choosing a college.
+                </p>
+             <button onclick="openCollege('location')">Explore</button>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- College Details Popup -->
+<div id="collegeModal" class="college-modal">
+
+    <div class="college-modal-content">
+
+        <span class="close-college" onclick="closeCollege()">×</span>
+
+        <h2 id="collegeTitle"></h2>
+
+        <p id="collegeDescription"></p>
+
+        <h3>Things to Know</h3>
+        <ul id="collegePoints"></ul>
+
+    </div>
+
+</div>
+
+<script>
+const collegeData = {
+
+    types: {
+        title: "🏫 Types of Colleges",
+        description: "Understand the different types of institutions and choose one according to your educational goals.",
+        points: [
+            "Universities and affiliated colleges",
+            "Government and private colleges",
+            "Autonomous colleges",
+            "Deemed universities",
+            "Specialized institutions"
+        ]
+    },
+
+    courses: {
+        title: "📚 Courses & Programs",
+        description: "Explore different degree programs and understand what each course can offer.",
+        points: [
+            "Engineering and Technology",
+            "Science and Mathematics",
+            "Commerce and Management",
+            "Arts and Humanities",
+            "Professional and vocational courses"
+        ]
+    },
+
+    choosing: {
+        title: "🎯 Choose the Right College",
+        description: "Consider important factors before selecting a college for your education.",
+        points: [
+            "Course and curriculum",
+            "Faculty and teaching quality",
+            "Placement opportunities",
+            "Infrastructure and facilities",
+            "College reputation and accreditation"
+        ]
+    },
+
+    fees: {
+        title: "💰 Fees & Scholarships",
+        description: "Understand the financial aspects of higher education and explore ways to reduce your education costs.",
+        points: [
+            "Tuition and other college fees",
+            "Government scholarships",
+            "Merit-based scholarships",
+            "Need-based financial assistance",
+            "Education loan options"
+        ]
+    },
+
+    facilities: {
+        title: "🏠 Hostel & Facilities",
+        description: "Learn about the facilities that can make your college experience comfortable and productive.",
+        points: [
+            "Hostel and accommodation",
+            "Library and laboratories",
+            "Sports and recreation",
+            "Internet and computer facilities",
+            "Canteen and medical facilities"
+        ]
+    },
+
+    location: {
+        title: "📍 Location & Accessibility",
+        description: "The location of a college can affect your daily life, expenses and overall college experience.",
+        points: [
+            "Distance from home",
+            "Public transportation",
+            "Campus safety",
+            "Nearby accommodation",
+            "Accessibility and connectivity"
+        ]
+    }
+};
+
+function openCollege(type) {
+
+    const data = collegeData[type];
+
+    document.getElementById("collegeTitle").textContent = data.title;
+    document.getElementById("collegeDescription").textContent = data.description;
+
+    document.getElementById("collegePoints").innerHTML =
+        data.points.map(point => `<li>${point}</li>`).join("");
+
+    document.getElementById("collegeModal").style.display = "flex";
+}
+
+function closeCollege() {
+    document.getElementById("collegeModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
