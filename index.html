@@ -27,30 +27,24 @@
 
 </section>
 
-    <script src="script.js"></script>
-
-
-
-<script src="script.js"></script>
-
 <header>
     
     <nav>
-        <ul>
-            <li><a href="#">🏛Home</a></li>
-            <li><a href="#">💼Career</a></li>
-            <li><a href="#">📚Skills</a></li>
-            <li><a href="#">🎓 College</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="#home">🏛 Home</a></li>
+        <li><a href="#career">💼 Career</a></li>
+        <li><a href="#skills">📚 Skills</a></li>
+        <li><a href="#college">🎓 College</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <button class="login-btn">Login</button>
+    
 </header>
 
-<script src="script.js"></script>
-<section class="hero">
+
+<section class="hero" id="home">
 
     <div class="hero-content">
 
@@ -61,7 +55,9 @@
             internships and scholarships.
         </p>
 
-        <button class="btn1">Explore Careers</button>
+        <button class="btn1" onclick="window.location.href='career.html'">
+    Explore Careers
+</button>
 
         <button class="btn2">Learn Skills</button>
 
@@ -75,12 +71,14 @@
     <p>Search for careers, college, courses or skills</p>
 
     <div class="search-box">
-        <input type="text" placeholder="Search here...">
-        <button>Search</button>
-    </div>
+    <input type="text" id="searchInput" placeholder="Search careers, skills, college...">
+    <button id="searchBtn">Search</button>
+</div>
+
+<p id="searchMessage"></p>
 
 </section>
-<section class="education">
+<section class="education" id="college">
 
     <h2>Choose Your Education Level</h2>
 
@@ -119,7 +117,7 @@
     </div>
 
 </section>
-<section class="career-section">
+<section class="career-section" id="career">
 
     <h2>Explore Career Categories</h2>
 
@@ -158,7 +156,7 @@
     </div>
 
 </section>
-<section class="skills-section">
+<section class="skills-section" id="skills">
   <h2>Develop Your Skills</h2>
 
   <div class="skills-container">
@@ -292,7 +290,7 @@
     </div>
 
 </section>
-<footer>
+<footer id="contact">
 
     <div class="footer-container">
 
@@ -338,5 +336,7 @@
 
 </footer>
 <button id="topBtn">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
